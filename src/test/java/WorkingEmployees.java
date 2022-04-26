@@ -34,6 +34,19 @@ public class WorkingEmployees {
                 for (int i = 0; i < array.length(); i++) {
                     int post_id = array.getJSONObject(i).getInt("id");
                     String name= array.getJSONObject(i).getString("employee_name");
+                    
+                    //Checking if an employee's name consists of two digits
+                    char[] chars = name.toCharArray();
+                        int digitCount = 0;
+                         for (char aChar : chars) {
+                        if(Character.isDigit(aChar)){
+                            digitCount++;
+                            }
+                         }
+                        if(digitCount >= 2){
+                            System.out.println(result);
+                        }
+                    
                     if (name.length() > mostLongName.length()) {
                         mostLongName = name;
                          }
